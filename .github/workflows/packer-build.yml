@@ -61,19 +61,19 @@ jobs:
           echo subnet_id=\"${{ secrets.SUBNET_ID }}\" >> ami.pkrvars.hcl
           echo dev_id=\"${{ secrets.DEV_ID }}\" >> ami.pkrvars.hcl
           echo prod_id=\"${{ secrets.PROD_ID }}\" >> ami.pkrvars.hcl
-          echo source_ami=\"${{ var.SOURCE_AMI }}\" >> ami.pkrvars.hcl
-          echo aws_region=\"${{ var.AWS_REGION }}\" >> ami.pkrvars.hcl
-          echo instance_type=\"${{ var.INSTANCE_TYPE}}\" >> ami.pkrvars.hcl
-          echo volume_type=\"${{ var.VOLUME_TYPE}}\" >> ami.pkrvars.hcl
-          echo volume_size=\"${{ var.VOLUME_SIZE}}\" >> ami.pkrvars.hcl
-          echo device_name=\"${{ var.DEVICE_NAME}}\" >> ami.pkrvars.hcl
+          echo source_ami=\"${{ vars.SOURCE_AMI }}\" >> ami.pkrvars.hcl
+          echo aws_region=\"${{ vars.AWS_REGION }}\" >> ami.pkrvars.hcl
+          echo instance_type=\"${{ vars.INSTANCE_TYPE}}\" >> ami.pkrvars.hcl
+          echo volume_type=\"${{ vars.VOLUME_TYPE}}\" >> ami.pkrvars.hcl
+          echo volume_size=\"${{ vars.VOLUME_SIZE}}\" >> ami.pkrvars.hcl
+          echo device_name=\"${{ vars.DEVICE_NAME}}\" >> ami.pkrvars.hcl
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           aws-access-key-id: ${{ secrets.AWS_DEV_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_DEV_SECRET_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: ${{ vars.AWS_REGION }}
 
       - name: Setup `packer`
         uses: hashicorp/setup-packer@main
