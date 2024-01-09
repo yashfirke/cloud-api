@@ -44,7 +44,7 @@ jobs:
 
       - name: Packer init, format and validate template with datasources
         run: |
-          cd aws/packer/
+          cd packer/
           packer fmt .
           packer init ami.pkr.hcl
           packer validate -evaluate-datasources --var-file=ami.pkrvars.hcl ami.pkr.hcl
