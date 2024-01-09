@@ -81,13 +81,9 @@ jobs:
         with:
           version: "latest"
 
-      - name: Packer format
-        id: fmt
-        run: "packer fmt ."
-
       - name: Packer init, format validate and build custom AMI
         run: |
-          cd packer/
+          cd packer &&
           packer fmt .
           packer init ami.pkr.hcl
           packer validate -evaluate-datasources --var-file=ami.pkrvars.hcl ami.pkr.hcl
