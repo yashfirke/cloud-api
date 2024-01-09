@@ -53,7 +53,7 @@ jobs:
 
       - name: Packer variables
         run: |
-          touch ami.pkrvars.hcl
+          touch packer/ami.pkrvars.hcl
           echo ami_prefix=\"${{ vars.AMI_PREFIX }}\" >> ami.pkrvars.hcl
           echo OS=\"${{ vars.OS }}\" >> ami.pkrvars.hcl
           echo ubuntu_version=\"${{ vars.VERSION }}\" >> ami.pkrvars.hcl
