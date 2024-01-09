@@ -20,13 +20,13 @@ variable "aws_region" {
 variable "source_ami" {
   type        = string
   description = "Default Ubuntu AMI to build our custom AMI"
-  default     = "ami-08c40ec9ead489470" #Ubuntu 22.04 LTS
+  default     = "ami-0c7217cdde317cfec" #Ubuntu 22.04 LTS
 }
 
 variable "ami_prefix" {
   type        = string
   description = "AWS AMI name prefix"
-  default     = "ami_prefix"
+  default     = "yash"
 }
 
 variable "ssh_username" {
@@ -44,31 +44,31 @@ variable "subnet_id" {
 variable "OS" {
   type        = string
   description = "Base operating system version"
-  default     = "OS"
+  default     = "ubuntu"
 }
 
 variable "ubuntu_version" {
   type        = string
   description = "Version of the custom AMI"
-  default     = "ubuntu-version"
+  default     = "22.04"
 }
 
 variable "dev_id" {
   type        = string
   description = "AWS dev account ID"
-  default     = "54321"
+  default     = "339713166187"
 }
 
 variable "prod_id" {
   type        = string
   description = "AWS prod account ID"
-  default     = "12345"
+  default     = "471112526066"
 }
 
 variable "instance_type" {
   type        = string
   description = "AWS AMI instance type"
-  default     = "t3.micro"
+  default     = "t2.micro"
 }
 variable "volume_type" {
   type        = string
