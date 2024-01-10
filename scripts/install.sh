@@ -138,7 +138,7 @@ echo "|                                                                         
 echo "|                                                            Unpacking Artifacts                                                          |"
 echo "|                                                                                                                                         |"
 echo "+-----------------------------------------------------------------------------------------------------------------------------------------+"
-unzip /home/ubuntu/webapp.zip -d /home/ubuntu/
+unzip /home/ubuntu/webapp.zip -d /home/ubuntu/webapp
 sleep 3
 sudo rm -rf /home/ubuntu/webapp.zip
 sleep 3
