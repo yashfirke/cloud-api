@@ -32,7 +32,7 @@ variable "ami_prefix" {
 variable "ssh_username" {
   type        = string
   description = "username to ssh into the AMI Instance"
-  default     = "username"
+  default     = "ubuntu"
 }
 
 variable "subnet_id" {
